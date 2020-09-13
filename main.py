@@ -61,9 +61,13 @@ def change_read():
 
     book_id = ui.get_book_id()
     book = store.get_book_by_id(book_id)  
-    new_read = ui.get_read_value()     
-    book.read = new_read 
-    book.save()
+    if (book):
+        new_read = ui.get_read_value()     
+        book.read = new_read 
+        book.save()
+    
+    else:
+        print('Error: book not found')
     
 
 def quit_program():
