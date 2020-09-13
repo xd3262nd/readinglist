@@ -38,7 +38,7 @@ def add_book():
 
     # This is a small bit of exception handling to deal with whenever a duplicate book tries to be added.
     except:
-        print('I\'m sorry, that book has already been added.')
+        print('Error: that book has already been added.')
     
 
 def show_read_books():
