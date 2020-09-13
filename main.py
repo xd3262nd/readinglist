@@ -6,8 +6,8 @@ import ui
 
 store = BookStore()
 
-def main():
 
+def main():
     menu = create_menu()
 
     while True:
@@ -26,6 +26,8 @@ def create_menu():
     menu.add_option('4', 'Show Read Books', show_read_books)
     menu.add_option('5', 'Show All Books', show_all_books)
     menu.add_option('6', 'Change Book Read Status', change_read)
+    menu.add_option('7', 'Delete Book', delete_book)
+
     menu.add_option('Q', 'Quit', quit_program)
 
     return menu
@@ -34,7 +36,7 @@ def create_menu():
 def add_book():
     new_book = ui.get_book_info()
     new_book.save()
-    
+
 
 def show_read_books():
     read_books = store.get_books_by_read_value(True)
@@ -58,13 +60,23 @@ def search_book():
 
 
 def change_read():
-
     book_id = ui.get_book_id()
-    book = store.get_book_by_id(book_id)  
-    new_read = ui.get_read_value()     
-    book.read = new_read 
+    book = store.get_book_by_id(book_id)
+    new_read = ui.get_read_value()
+    book.read = new_read
     book.save()
-    
+
+
+def delete_book():
+    book_id = ui.get_book_id()
+
+    try:
+        book_obj = store.get_book_by_id(book_id)
+        store._delete_book(book_obj)
+        print(f'Deleted the book with the following id {book_id}')
+    except:
+        raise Exception('Error: Book Not Found')
+
 
 def quit_program():
     ui.message('Thanks and bye!')
