@@ -64,7 +64,13 @@ def change_read():
     new_read = ui.get_read_value()     
     book.read = new_read 
     book.save()
+
+    if (new_read):
+        print(f'You have read {book.title} by {book.author}')
     
+    else:
+        print(f'You have not read {book.title} by {book.author}')    
+
 
 def quit_program():
     ui.message('Thanks and bye!')
