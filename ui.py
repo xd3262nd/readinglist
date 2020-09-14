@@ -8,7 +8,11 @@ def display_menu_get_choice(menu):
     while True:
         print(menu)
         choice = input('Enter choice? ')
-        if menu.is_valid(choice):
+
+        if type(choice) == str:
+            choice = choice.strip().upper()
+
+        if menu.is_valid(choice.strip()):
             return choice
         else:
             print('Not a valid choice, try again.')
@@ -24,13 +28,13 @@ def show_books(books):
     """ Display all books in a list of Books, or a 'No books' message
      :param books: the book list """
 
-    # TODO print a blank line before and after the book list or no books message
-
+    print()
     if books:
         for book in books:
             print(book)
     else:
         print('No books to display')
+    print()
 
 
 def get_book_info():
