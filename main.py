@@ -72,11 +72,11 @@ def change_read():
         book.read = new_read 
         book.save()
         
-            if new_read:
-                print(f'You have read {book.title} by {book.author}')
+        if new_read:
+            print(f'You have read {book.title} by {book.author}')
             
-            else:
-                print(f'You have not read {book.title} by {book.author}')
+        else:
+            print(f'You have not read {book.title} by {book.author}')
 
     else:
         print('Error: book not found')
