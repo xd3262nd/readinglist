@@ -75,7 +75,7 @@ def delete_book():
         store._delete_book(book_obj)
         print(f'Deleted the book with the following id {book_id}')
     except:
-        raise Exception('Error: Book Not Found')
+        print('Error: Book Not Found')
 
 
 def quit_program():
