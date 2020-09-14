@@ -10,9 +10,9 @@ def display_menu_get_choice(menu):
         choice = input('Enter choice? ')
 
         if type(choice) == str:
-            choice = choice.upper()
+            choice = choice.strip().upper()
 
-        if menu.is_valid(choice):
+        if menu.is_valid(choice.strip()):
             return choice
         else:
             print('Not a valid choice, try again.')
