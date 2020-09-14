@@ -3,8 +3,8 @@
 Basic python book reading list application. For practicing teamwork and GitHub collaboration purposes.
 
 ### Description:
-A simple program to create and manage a user book list. In this book list, user is able to add/delete book that he/she wants to read or what the user has read.
-User will make a selection on the menu section to either add book, search book in book list, modify book list or delete a book from the book list. 
+A simple program to create and manage a user's book list. Within the book list, the user is able to add/delete books that they want to read or mark books as read/not read.
+The user will make a selection on the menu section to either add a book, search books in the book list, change a book's read status, or delete a book from the book list.
 
 ### Requirements
 Uses SQLite3 database to store data. 
